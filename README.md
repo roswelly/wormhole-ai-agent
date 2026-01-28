@@ -1,114 +1,85 @@
-# Wormhole NextJS Agent
+# Wormhole AI Agent
 
-This is a Next.js application that demonstrates the use of the Solana Agent Kit to create a Wormhole agent for cross-chain operations. The agent provides a chat interface for interacting with Wormhole's cross-chain messaging protocol, allowing users to perform token transfers and CCTP (Cross-Chain Transfer Protocol) operations seamlessly.
+A Next.js-powered AI Agent designed to simplify cross-chain operations on the Solana blockchain. Built with **LangChain**, **Solana Agent Kit**, and the **Wormhole Protocol**, this agent allows users to interact with blockchain bridges using natural language.
 
-## Features
+## 🚀 Features
 
-- **Interactive Chat Interface**: User-friendly chat UI for interacting with the Wormhole agent
-- **Cross-Chain Operations**:
-  - Token transfers between supported blockchains
-  - CCTP transfers for USDC between supported chains
-  - Chain information retrieval
-- **Real-Time Transaction Tracking**: Visual feedback for transaction status and completion
-- **Transaction History**: View details of completed transactions including source and destination transactions
-- **Responsive Design**: Works on desktop and mobile devices with dark mode support
-- **Real-Time Logs**: Debug panel showing agent operations in real-time
+*   **Natural Language Interface**: Chat with the agent to execute complex blockchain transactions.
+*   **Cross-Chain Transfers**: Bridge tokens between supported chains (Ethereum, Solana, Arbitrum, Optimism, etc.) using Wormhole.
+*   **CCTP Support**: Native USDC transfers across chains using Circle's Cross-Chain Transfer Protocol.
+*   **Asset Management**: Create wrapped tokens and manage assets on Solana.
+*   **Chain Discovery**: Query supported chains and network status instantly.
+*   **Real-Time Logs**: View the agent's "thought process" and tool execution logs in a dedicated panel.
 
-## Cross-Chain Operations Supported
+## 🛠 Tech Stack
 
-The agent supports the following operations:
+*   **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS 4
+*   **AI/LLM**: LangChain, LangGraph, OpenAI (GPT-4o-mini)
+*   **Blockchain**: Solana Agent Kit, Wormhole SDK
+*   **State**: Keyv (SQLite)
 
-1. **Token Transfers**: Transfer tokens between different blockchains using Wormhole's token bridge
-2. **CCTP Transfers**: Transfer USDC between chains using Circle's Cross-Chain Transfer Protocol
-3. **Chain Information**: Get information about supported chains and their addresses
+## 📋 Prerequisites
 
-## UI Components
+Before running the project, ensure you have:
 
-The application includes custom UI components for displaying different types of operations:
+*   Node.js 18+ installed.
+*   A **Solana Wallet** (Private Key) with some SOL for transaction fees.
+*   An **OpenAI API Key** (with credits available).
+*   A Solana RPC URL (e.g., from Helius, QuickNode, or public endpoints).
 
-- **Token Transfer UI**: Green-themed interface showing token transfer details
-- **CCTP Transfer UI**: Purple-themed interface showing CCTP transfer details
-- **Supported Chains UI**: Grid display of supported chains grouped by network
+## ⚡ Getting Started
 
-## Getting Started
+1.  **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd wormhole-ai-agent
+    ```
 
-### Cloning the template
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-To clone the template, run the following command:
+3.  **Configure Environment Variables**
+    Create a `.env` file in the root directory:
+    ```bash
+    cp .env.example .env
+    ```
+    
+    Add your keys:
+    ```env
+    # Solana Configuration
+    SOLANA_PRIVATE_KEY=your_base58_private_key
+    RPC_URL=https://api.mainnet-beta.solana.com
 
-```bash
-gitpick sendaifun/solana-agent-kit/examples/defi/wormhole-nextjs-agent
-```
+    # OpenAI Configuration
+    OPENAI_API_KEY=sk-...
+    ```
 
-Then, set up your environment variables:
+4.  **Run the Development Server**
+    ```bash
+    npm run dev
+    ```
 
-1. Copy `.example.env` to `.env.local`
-2. Fill in the required API keys and configuration values
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Then, run the development server:
+## 💬 Usage Examples
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Once the agent is running, try these prompts:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **Check Support**: "What chains are supported by Wormhole?"
+*   **Bridge Funds**: "Transfer 0.1 SOL to Ethereum address 0x123..."
+*   **USDC Transfer**: "Bridge 5 USDC to Arbitrum via CCTP."
+*   **Wrap Tokens**: "Create a wrapped token for [Mint Address]."
 
-## Usage Examples
+## 🎨 Brand Guidelines
 
-Here are some example commands you can try with the agent:
+This project follows the Wormhole brand palette:
+*   **Plum**: `#C1BBF6`
+*   **Yellow**: `#DDE95A`
+*   **Coral**: `#FD8058`
+*   **Black/White**: Standard monochrome
 
-- "What chains do you support?"
-- "Transfer 0.01 SOL from Solana to Sui"
-- "Send 1 USDC from Solana to Base Sepolia using CCTP"
-- "What is Wormhole?"
-
-## Technologies Used
-
-- **Next.js**: React framework for the frontend
-- **React**: UI library
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Solana Agent Kit**: Framework for building blockchain agents
-- **Wormhole SDK**: For cross-chain operations
-
-## Brand Guidelines
-
-This project follows the Wormhole brand guidelines with the following color palette:
-
-- **Black**: #000000 (CMYK: 0/0/0/100, RGB: 0/0/0)
-- **White**: #FFFFFF (CMYK: 0/0/0/0, RGB: 255/255/255)
-- **Plum**: #C1BBF6 (CMYK: 22/24/0/4, RGB: 193/187/246)
-- **Yellow**: #DDE95A (CMYK: 5/0/61/9, RGB: 221/233/90)
-- **Coral**: #FD8058 (CMYK: 0/62/67/0, RGB: 253/128/88)
-
-## Project Structure
-
-- `/app`: Next.js app router pages and API routes
-- `/components`: React components including:
-  - `MessageBubble.tsx`: Handles rendering of different message types
-  - `ChatInput.tsx`: User input component
-  - `LogsPanel.tsx`: Debug logs display
-- `/public`: Static assets including brand icons
-
-## License
+## 📄 License
 
 This project is licensed under the MIT License.
-
-## Learn More
-
-- [Wormhole Documentation](https://docs.wormhole.com/wormhole/) - Learn about Wormhole's cross-chain messaging protocol
-- [Circle CCTP Documentation](https://developers.circle.com/stablecoins/docs/cctp-getting-started) - Learn about Circle's Cross-Chain Transfer Protocol
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
-- [Solana Agent Kit](https://github.com/solana-labs/solana-agent-kit) - Framework for building blockchain agents
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
