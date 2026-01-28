@@ -1,6 +1,6 @@
 # Wormhole AI Agent
 
-A Next.js-powered AI Agent designed to simplify cross-chain operations on the Solana blockchain. Built with **LangChain**, **Solana Agent Kit**, and the **Wormhole Protocol**, this agent allows users to interact with blockchain bridges using natural language.
+Wormhole AI Agent designed to simplify cross-chain operations on the Solana blockchain. Built with **LangChain**, **Solana Agent Kit**, and the **Wormhole Protocol**, this agent allows users to interact with blockchain bridges using natural language.
 
 ## 🚀 Features
 
@@ -71,14 +71,6 @@ Once the agent is running, try these prompts:
 *   **Bridge Funds**: "Transfer 0.1 SOL to Ethereum address 0x123..."
 *   **USDC Transfer**: "Bridge 5 USDC to Arbitrum via CCTP."
 *   **Wrap Tokens**: "Create a wrapped token for [Mint Address]."
-
-## 🎨 Brand Guidelines
-
-This project follows the Wormhole brand palette:
-*   **Plum**: `#C1BBF6`
-*   **Yellow**: `#DDE95A`
-*   **Coral**: `#FD8058`
-*   **Black/White**: Standard monochrome
 
 ## 📄 License
 
